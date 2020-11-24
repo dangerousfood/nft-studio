@@ -2,6 +2,8 @@ import React from 'react';
 import * as fcl from '@onflow/fcl';
 import hello from './contracts/build/HelloWorld.js'
 import script from './contracts/build/Script.js'
+import NonFungibleTokenImpl from './contracts/build/NonFungibleTokenImpl'
+import NonFungibleToken from './contracts/build/NonFungibleToken'
 import { template as setCode } from "@onflow/six-set-code"
 import './DappExample.css'
 
@@ -14,6 +16,7 @@ class DappExample extends React.Component {
       this.sendScript = this.sendScript.bind(this)
       this.authenticate = this.authenticate.bind(this)
       this.unauthenticate = this.unauthenticate.bind(this)
+      this.deployImplContract = this.deployImplContract.bind(this)
     }
 
     componentDidMount() {
@@ -47,11 +50,26 @@ class DappExample extends React.Component {
         contract: undefined,
         address: undefined
       });
-      deployContract(hello).then((resolve, reject) => {
+      deployContract(NonFungibleToken).then((resolve, reject) => {
             this.setState({
               contract: resolve,
               address: resolve.events[0].data.address
             });
+        })
+    }
+
+    deployImplContract() {
+      this.setState({
+        implcontract: undefined,
+        impladdress: undefined
+      });
+      // console.log(NonFungibleTokenImpl(this.state.address))
+      deployContract(NonFungibleTokenImpl(this.state.address)).then((resolve, reject) => {
+        console.log(resolve)
+            // this.setState({
+            //   implcontract: resolve,
+            //   implcontract: resolve.events[0].data.address
+            // });
         })
     }
 
@@ -106,6 +124,14 @@ class DappExample extends React.Component {
           </button>
 
           <pre className="textBox">
+            {JSON.stringify(this.state.implcontract, null, 2)}
+          </pre>
+
+          <button onClick={this.deployImplContract} disabled={this.state.account === undefined || this.state.address === undefined }>
+            deploy impl contract
+          </button>
+
+          <pre className="textBox">
             {JSON.stringify(this.state.transaction, null, 2)}
           </pre>
 
@@ -129,6 +155,7 @@ const sendScript = async (code) => {
 const deployContract = async (code) => {
     
     const response = await fcl.send([
+        fcl.limit(100),
         setCode({
             proposer: fcl.currentUser().authorization,
             authorization: fcl.currentUser().authorization,     

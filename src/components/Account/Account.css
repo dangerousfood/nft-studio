@@ -1,0 +1,17 @@
+.account {
+    /* float: left; */
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.avatar {
+    height: 50px;
+    width: 50px;
+}
+
+.address {
+    margin-left: 10px;
+}

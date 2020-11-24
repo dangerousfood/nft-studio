@@ -1,0 +1,10 @@
+.settings {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.settingsIcon {
+    height: 50px;
+    width: 50px;
+}
