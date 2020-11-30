@@ -1,0 +1,9 @@
+.nft-image { 
+  background: url(https://ipfs.rarible.com/ipfs/QmaMr3eAyQ1hTKVh41weYGewzqHdpnTb2WK4AiyKMGwgSv/image.png) 50% 50% no-repeat; /* 50% 50% centers image in div */
+  width: 100vw;
+  height: 100vw;
+  max-width: 100%;
+  max-height: 500px;
+  overflow: hidden;
+  border-radius: 5px;
+}

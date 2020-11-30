@@ -6,15 +6,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   /* padding: 10px; */
+  margin: 0;
+  width: 100%;
   height: 100%;
 }
 
 html, body {
   margin: 0;
+  width: 100%;
   height: 100%;
 }
 
 #root {
+  width: 100%;
   height: 100%;
 }
 

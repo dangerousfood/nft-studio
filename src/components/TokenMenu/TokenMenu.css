@@ -1,0 +1,17 @@
+.nft-series-item {
+  background: url(https://ipfs.rarible.com/ipfs/QmaMr3eAyQ1hTKVh41weYGewzqHdpnTb2WK4AiyKMGwgSv/image.png) 50% 50% no-repeat; /* 50% 50% centers image in div */
+  width: 200px;
+  height: 200px;
+  /* max-width: 100px;
+  max-height: 100px; */
+  /* overflow: hidden; */
+  border-radius: 5px;
+  margin-right: 0;
+
+  margin: 10px;
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}

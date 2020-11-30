@@ -1,46 +1,18 @@
 .App {
   /* text-align: center; */
-  height: 100%;
-}
 
-.settings-button {
-  float: right;
+  height: 100%;
+  width: 100%;
 }
 
 .main-view {
   min-height: 100%;
 }
 
-.series-menu-layout {
-
-}
-
-.series-menu {
-  padding: 15px;
-}
-
-.nft-layout {
-  background-color: greenyellow; 
-}
-
-.nft-image { 
-  background: url(https://ipfs.rarible.com/ipfs/QmaMr3eAyQ1hTKVh41weYGewzqHdpnTb2WK4AiyKMGwgSv/image.png) 50% 50% no-repeat; /* 50% 50% centers image in div */
-  width: 100vw;
-  height: 100vw;
-  max-width: 100%;
-  max-height: 500px;
-  overflow: hidden;
-  border-radius: 15px;
-}
-
 .shadow {
   box-shadow: 
     12px 12px 16px 0 rgba(0, 0, 0, 0.25),
     -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
-}
-
-.nft-attr-menu {
-
 }
 
 .col-margin {
@@ -52,30 +24,16 @@
   border-radius: 30px;
 }
 
-/* The heart of the matter */
-.testimonial-group > .row {
-  overflow-x: auto;
-  white-space: nowrap;
-}
-.testimonial-group > .row > .col-sm-4 {
-  display: inline-block;
-  float: none;
-}
 /* Decorations */
 /* .col-sm-4 { color: #fff; font-size: 48px; padding-bottom: 20px; padding-top: 18px; }
 .col-sm-4:nth-child(3n+1) { background: #c69; }
 .col-sm-4:nth-child(3n+2) { background: #9c6; }
 .col-sm-4:nth-child(3n+3) { background: #69c; } */
 
-.nft-series-item {
-  background: url(https://ipfs.rarible.com/ipfs/QmaMr3eAyQ1hTKVh41weYGewzqHdpnTb2WK4AiyKMGwgSv/image.png) 50% 50% no-repeat; /* 50% 50% centers image in div */
-  width: 100vw;
-  height: 100vw;
-  max-width: 100px;
-  max-height: 100px;
-  overflow: hidden;
-  border-radius: 5px;
-  margin-right: 0;
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
 }
 
 .scroll-margin {
@@ -83,8 +41,24 @@
   padding-right: 0;
 }
 
-.settings-button {
-  float: right;
+
+.modal-cover {
+  min-width: 100%;
+  min-height: 100%;
+  /* margin: auto; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.under-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .App-logo {
